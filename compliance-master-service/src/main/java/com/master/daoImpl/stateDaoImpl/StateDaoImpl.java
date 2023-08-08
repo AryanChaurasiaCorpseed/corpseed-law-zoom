@@ -29,4 +29,11 @@ public class StateDaoImpl implements StateDao {
     public State findStateById(Long stateId) {
         return this.sessionFactory.getCurrentSession().get(State.class,stateId);
     }
+    
+    @Transactional
+	@Override
+	public List<State> findAllState() {
+        return this.sessionFactory.getCurrentSession()
+                .createCriteria(State.class).list();		
+	}
 }

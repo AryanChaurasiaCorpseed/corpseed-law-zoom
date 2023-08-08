@@ -9,4 +9,6 @@ public interface StateDao {
     List<State> findStateByCountry(Country country);
 
     State findStateById(Long stateId);
+
+	List<State> findAllState();
 }
