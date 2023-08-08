@@ -4,4 +4,6 @@ import com.master.response.ResponseEntity;
 
 public interface StateService {
     ResponseEntity fetchAllStates(Long countryId);
+
+	ResponseEntity fetchAllStateList();
 }
