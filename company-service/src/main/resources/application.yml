@@ -1,0 +1,52 @@
+compliance_service:
+    port: http://localhost:8081/
+db:
+    driver: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://127.0.0.1/lawzoom
+    username: root
+domain: http://www.lawzoom.in
+
+hibernate:
+    dialect: org.hibernate.dialect.MySQL8Dialect
+    hbm2ddl:
+        auto: update
+    show_sql: true
+
+entitymanager:
+    packagesToScan: com.lawzoom.companyservice.model
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: info
+    info:
+        env:
+            enabled: true
+server:
+    port: 8181
+spring:
+    application:
+        name: COMPANY-SERVICE
+
+    servlet:
+        multipart:
+            enabled: true
+            file-size-threshold: 2KB
+            max-file-size: 200MB
+            max-request-size: 215MB
+    mvc:
+        pathmatch:
+            matching-strategy: ant_path_matcher
+
+
+eureka:
+    instance:
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        prefer-ip-address: true
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        service-url:
+            defaultZone: http://localhost:8761/eureka
