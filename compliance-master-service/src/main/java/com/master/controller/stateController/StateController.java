@@ -17,7 +17,10 @@ public class StateController {
     public ResponseEntity fetchStateList(@PathVariable("countryId") Long countryId){
         return this.stateService.fetchAllStates(countryId);
     }
-    
+
+	/* 
+	@Author :- Aryan Chaurasia
+	*/
     @GetMapping()
     public ResponseEntity fetchAllStateList(){
         return this.stateService.fetchAllStateList();
