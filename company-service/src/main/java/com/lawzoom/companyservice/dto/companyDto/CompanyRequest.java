@@ -23,6 +23,14 @@ public class CompanyRequest {
 
     private String companyType;
 
+    private String firstName;
+
+    private String lastName;
+
+    private String businessActivityEmail;
+
+    private String designation;
+
     private String companyName;
 
     private String companyState;
@@ -64,5 +72,10 @@ public class CompanyRequest {
     private int contractEmployee;
 
     private Team team;
+
+    private String gstNumber;
+
+    private String operationUnitAddress;
+
 
 }

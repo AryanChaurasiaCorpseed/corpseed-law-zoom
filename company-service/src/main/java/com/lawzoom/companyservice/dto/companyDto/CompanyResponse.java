@@ -24,6 +24,14 @@ public class CompanyResponse {
 
     private String companyName;
 
+    private String firstName;
+
+    private String lastName;
+
+    private String businessActivityEmail;
+
+    private String designation;
+
     private String companyState;
 
     private String companyCity;
@@ -63,4 +71,8 @@ public class CompanyResponse {
     private List<GstResponse> gstResponseList;
 
     private int businessUnits;
+
+    private String gstNumber;
+
+    private String operationUnitAddress;
 }
