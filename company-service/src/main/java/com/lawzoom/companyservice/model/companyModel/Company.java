@@ -29,6 +29,27 @@ public class Company {
 
 	@Column(name = "user_id")
 	private Long userId;
+
+	@Column(name = "first_name")
+	@NotNull(message = "First Name should be filled")
+	@NotBlank(message = "Please enter your first name")
+	private String firstName;
+
+	@Column(name = "last_name")
+	@NotNull(message = "Last Name should be filled")
+	@NotBlank(message = "Please enter your Last name")
+	private String lastName;
+
+	@Column(name = "business_act_email")
+	@NotNull(message = "Email Name should be filled")
+	@NotBlank(message = "Please enter your email ")
+	private String businessActivityEmail;
+
+	@Column(name = "designation")
+	@NotNull(message = "Designation should be filled")
+	@NotBlank(message = "Please enter your designation")
+	private String designation;
+
 	
 	@Column(name = "company_type")
 	@NotNull(message = "Company type can't be null !!")
@@ -88,6 +109,13 @@ public class Company {
 	@Column(name = "contract_employee")
 	private int contractEmployee;
 
+	@Column(name="gst_no")
+	private String gstNumber;
+
+	@Column(name = "operation_unit_address")
+	@Size(max = 255)
+	private String operationUnitAddress;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_at")
 	private Date createdAt;
@@ -111,6 +139,10 @@ public class Company {
 		return "Company{" +
 				"id=" + id +
 				", userId=" + userId +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", businessActivityEmail='" + businessActivityEmail + '\'' +
+				", designation='" + designation + '\'' +
 				", companyType='" + companyType + '\'' +
 				", name='" + name + '\'' +
 				", state='" + state + '\'' +
@@ -126,9 +158,13 @@ public class Company {
 				", businessActivity='" + businessActivity + '\'' +
 				", permanentEmployee=" + permanentEmployee +
 				", contractEmployee=" + contractEmployee +
+				", gstNumber='" + gstNumber + '\'' +
+				", operationUnitAddress='" + operationUnitAddress + '\'' +
 				", createdAt=" + createdAt +
 				", updatedAt=" + updatedAt +
 				", isEnable=" + isEnable +
+				", teams=" + teams +
+				", gstList=" + gstList +
 				'}';
 	}
 }
