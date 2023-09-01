@@ -32,7 +32,7 @@ public class WebSecurityConfig {
             "/swagger-ui/**",
             "/v3/api-docs",
             "/webjars/**",
-            "/api/auth/**"
+            "/api/auth/**","/api/createEnquiry"
     };
 
     @Bean

@@ -22,11 +22,15 @@ public class OTP {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
     @Size(min = 10,max = 15,message = "Mobile length should be 10-15 digits.")
     private String mobile;
 
     @Column(name = "otp_code")
     private String otpCode;
+
+    private String company;
 
     private Long count;
 
@@ -41,4 +45,7 @@ public class OTP {
     @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
     @Column(name = "expired_at")
     private Date expiredAt;
+
+
+
 }

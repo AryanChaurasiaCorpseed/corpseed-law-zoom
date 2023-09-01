@@ -5,7 +5,8 @@ import com.authentication.payload.request.OtpResponse;
 
 public interface OtpService {
 
-    OtpResponse generateOtp(String mobile);
+
+    OtpResponse generateOtp(String mobile, String name,String company);
 
     OTP findOtpByMobileAndOtpCode(String mobile, String otp);
 }

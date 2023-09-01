@@ -10,6 +10,7 @@ import lombok.*;
 @Builder
 public class SignupRequest {
 
+    private String name;
     private String mobile;
     private String otp;
     private String password;
