@@ -29,6 +29,8 @@ public class SignupController {
     })
     @PostMapping()
     public ResponseEntity<?> signupUser(@RequestBody SignupRequest signupRequest){
+
+        System.out.println(signupRequest);
         return userService.signupUser(signupRequest);
     }
 

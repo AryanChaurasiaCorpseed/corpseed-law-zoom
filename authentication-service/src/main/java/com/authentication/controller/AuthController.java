@@ -45,13 +45,14 @@ public class AuthController {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(tokenRequest.getUsername(), tokenRequest.getPassword()));
 
+        System.out.println(authentication);
         SecurityContextHolder.getContext().setAuthentication(authentication);
+
         String jwt = this.jwtTokenProviderService.generateJwtToken(authentication);
 
+
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-        List<String> roles = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
-                .collect(Collectors.toList());
+        List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority()).collect(Collectors.toList());
 
         return new ResponseEntity().ok(new JwtResponse(jwt,
                 userDetails.getId(),

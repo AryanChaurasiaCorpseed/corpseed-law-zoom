@@ -11,4 +11,10 @@ import lombok.*;
 public class OtpRequest {
 
     private String mobile;
+
+    private String name;
+
+    private String company;
+
+
 }

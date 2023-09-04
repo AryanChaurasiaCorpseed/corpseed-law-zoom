@@ -100,7 +100,7 @@ public class BusinessActivityDaoImpl implements BusinessActivityDao {
 		}
 	}
 
-	@Override
+	@Override̥
 	public boolean deleteBusinessActivity(BusinessActivity businessActivity) {
 		Session session=null;
 		Transaction tx=null;

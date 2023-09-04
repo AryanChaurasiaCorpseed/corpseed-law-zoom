@@ -16,19 +16,21 @@ public class OtpServiceImpl implements OtpService {
 
 
     @Override
-    public OtpResponse generateOtp(String mobile) {
+    public OtpResponse generateOtp(String mobile, String name,String company) {
         String otpCode = CommonUtil.generateOTP(6);
 
         OTP otp = this.otpRepository.findByMobileContaining
                 (mobile.length() > 10 ? mobile.trim().substring(mobile.length() - 10)
                         : mobile.trim()).orElse(new OTP().builder().mobile(mobile.trim())
-                .otpCode(otpCode).count(1L).isUsed(false).created_at(CommonUtil.getDate())
+                .otpCode(otpCode).count(1L).isUsed(false).created_at(CommonUtil.getDate()).name(name).company(company)
                 .expiredAt(CommonUtil.getExpiryDateTime()).build());
         System.out.println("otp====="+otp);
 
         if(otp.getId()!=null&&otp.getId()>0){
             otp.setCount(otp.getCount()+1);
             otp.setOtpCode(otpCode);
+            otp.setName(name);
+            otp.setCompany(company);
             otp.setExpiredAt(CommonUtil.getExpiryDateTime());
         };
 
