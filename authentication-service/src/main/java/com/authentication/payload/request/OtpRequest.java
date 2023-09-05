@@ -14,7 +14,7 @@ public class OtpRequest {
 
     private String name;
 
-    private String company;
+    private String password;
 
 
 }

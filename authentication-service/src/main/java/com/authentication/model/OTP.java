@@ -30,7 +30,7 @@ public class OTP {
     @Column(name = "otp_code")
     private String otpCode;
 
-    private String company;
+    private String password;
 
     private Long count;
 
